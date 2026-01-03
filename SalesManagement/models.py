@@ -8,3 +8,6 @@ class SaleModel(models.Model):
     discount_percent=models.DecimalField(max_digits=5, decimal_places=2, null=True)
     tax_percent=models.DecimalField(max_digits=5, decimal_places=2, null=True)
     sale_date=models.DateField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.product_name

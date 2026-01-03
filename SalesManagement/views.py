@@ -31,7 +31,7 @@ def addSalePage(request):
 def SaleList(request):
 
     sales=SaleModel.objects.all()
-    for sale in sales:
+    for sale in sales:  # Calculate total by For loop for each sale
         base_price = sale.unit_price * sale.quantity
         discount = base_price * (sale.discount_percent / 100)
         tax = base_price * (sale.tax_percent / 100)
